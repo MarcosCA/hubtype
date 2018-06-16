@@ -10,7 +10,7 @@ var search = function(q, callback) {
         .query({ key: API_KEY, cx: CUSTOM_SEARCH_ID, q: q })
         .end((err, response) => {
         if (err) { 
-            return console.log(err);
+            console.log(err);
             callback(err, null);
         } else {
             var firstSearchResult = _.get(response, 'body.items[0].link')
